@@ -13,7 +13,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
           <LoginScreen />
