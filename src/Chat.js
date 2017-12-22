@@ -14,7 +14,7 @@ class Chat extends React.Component{
         var port = (process.env.PORT || 5000);
 
         console.log("Using port on Chat.js " + port);
-        this.socket = io('https://cryptodothockey.appspot.com:' + port);
+        this.socket = io('localhost:5000');
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             addMessage(data);
