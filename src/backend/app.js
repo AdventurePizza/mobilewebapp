@@ -5,8 +5,8 @@ var app = express();
 
 var port = (process.env.PORT || 5000);
 
-server = app.listen(5000, function(){
-    console.log('server is running on port ' + 5000)
+server = app.listen(port, function(){
+    console.log('server is running on port ' + port)
 });
 
 io = socket(server);
