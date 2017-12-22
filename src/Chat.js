@@ -11,7 +11,9 @@ class Chat extends React.Component{
             messages: []
         };
 
-        this.socket = io('https://mobilewebmessenger.herokuapp.com:8080');
+        var port = (process.env.PORT || 8080);
+
+        this.socket = io('https://mobilewebmessenger.herokuapp.com:' + port);
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             addMessage(data);
