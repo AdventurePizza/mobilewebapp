@@ -5,7 +5,7 @@ var app = express();
 
 var port = (process.env.PORT || 5000);
 
-server = app.listen(port, 'chat.sharat.info');
+server = app.listen(port, '104.236.66.20');
 
 io = socket(server);
 
