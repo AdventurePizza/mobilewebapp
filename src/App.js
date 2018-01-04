@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './adventure.png';
 import './App.css';
-import LoginScreen from './LoginScreen';
 //import { subscribeToTimer } from './api';
 import Chat from './Chat';
 

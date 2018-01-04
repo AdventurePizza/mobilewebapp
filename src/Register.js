@@ -4,9 +4,13 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+
 class Register extends Component {
-  constructor(props){
-    super(props);
+
+  constructor(){
+    super();
+    this.handleClick = this.handleClick.bind(this);
     this.state={
       first_name:'',
       last_name:'',
@@ -14,14 +18,29 @@ class Register extends Component {
       password:''
     }
   }
+
+  handleClick(){
+    //register Function
+  }
+
   render() {
+
+    const styleDiv = {
+      "textAlign":"center"
+    }
+
+    const styleButton = {
+      "marginTop":15,
+      "marginBottom":15
+    }
+
     return (
-      <div>
-        <MuiThemeProvider>
-          <div>
-          <AppBar
-             title="Register"
-           />
+      <MuiThemeProvider>
+        <div>
+        <AppBar
+           title="Register"
+         />
+         <div style={styleDiv}>
            <TextField
              hintText="Enter your First Name"
              floatingLabelText="First Name"
@@ -48,14 +67,17 @@ class Register extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-          </div>
-         </MuiThemeProvider>
-      </div>
+           <RaisedButton label="Submit" primary={true} style={styleButton} onClick={(event) => this.handleClick(event)}/>
+
+           <h6>Already Registered?</h6>
+           <Link to='/login'>
+             <RaisedButton label="Login" style={styleButton} primary={true}/>
+           </Link>
+         </div>
+
+        </div>
+       </MuiThemeProvider>
     );
   }
 }
-const style = {
-  margin: 15,
-};
 export default Register;
