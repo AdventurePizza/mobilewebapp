@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import axios from 'axios';
 class Profile extends React.Component{
 
   constructor(){
@@ -21,12 +21,10 @@ class Profile extends React.Component{
     }
   }
 
-  async collectData(){
-    // Please fill the URL of the Api from which the Data is to be fetched
-    const userData = await fetch(URL);
-    this.setState({
-      userData
-    });
+  collectData(){
+    axios.get(URL)
+      .then(response => console.log(response))
+      .catch(error=>console.log('Something Went Wrong'))
   }
 
   render(){
